@@ -141,7 +141,7 @@
 	phy = <&phy1>;
 	status = "okay";
 
-	phy1: ethernet-phy@1 {
-		reg = <1>;
+	phy1: ethernet-phy@7 {
+		reg = <7>;
 	};
 };

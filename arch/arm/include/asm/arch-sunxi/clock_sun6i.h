@@ -302,6 +302,9 @@ struct sunxi_ccm_reg {
 #define AHB_GATE_OFFSET_DMA		6
 #define AHB_GATE_OFFSET_SS		5
 
+#define AHB_GATE_OFFSET_SPI0		20
+#define AHB_GATE_OFFSET_SPI1		21
+
 /* ahb_gate1 offsets */
 #define AHB_GATE_OFFSET_DRC0		25
 #define AHB_GATE_OFFSET_DE_FE0		14

@@ -94,9 +94,15 @@ void i2c_init_board(void)
 	sunxi_gpio_set_cfgpin(SUNXI_GPH(15), SUN6I_GPH_TWI0);
 	clock_twi_onoff(0, 1);
 #elif defined(CONFIG_MACH_SUN8I)
+#ifndef CONFIG_MACH_SUNXI_H3_H5
 	sunxi_gpio_set_cfgpin(SUNXI_GPH(2), SUN8I_GPH_TWI0);
 	sunxi_gpio_set_cfgpin(SUNXI_GPH(3), SUN8I_GPH_TWI0);
 	clock_twi_onoff(0, 1);
+#else
+	sunxi_gpio_set_cfgpin(SUNXI_GPA(11), 2);
+	sunxi_gpio_set_cfgpin(SUNXI_GPA(12), 2);
+	clock_twi_onoff(0, 1);
+#endif /* !CONFIG_MACH_SUNXI_H3_H5 */
 #endif
 #endif
 
@@ -116,9 +122,15 @@ void i2c_init_board(void)
 	sunxi_gpio_set_cfgpin(SUNXI_GPH(17), SUN6I_GPH_TWI1);
 	clock_twi_onoff(1, 1);
 #elif defined(CONFIG_MACH_SUN8I)
+#ifndef CONFIG_MACH_SUNXI_H3_H5
 	sunxi_gpio_set_cfgpin(SUNXI_GPH(4), SUN8I_GPH_TWI1);
 	sunxi_gpio_set_cfgpin(SUNXI_GPH(5), SUN8I_GPH_TWI1);
 	clock_twi_onoff(1, 1);
+#else
+	sunxi_gpio_set_cfgpin(SUNXI_GPA(18), 3);
+	sunxi_gpio_set_cfgpin(SUNXI_GPA(19), 3);
+	clock_twi_onoff(1, 1);
+#endif /* !CONFIG_MACH_SUNXI_H3_H5 */
 #endif
 #endif
 

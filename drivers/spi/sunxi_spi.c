@@ -340,7 +340,7 @@ static void sunxi_spi_write(struct udevice *dev, const char *tx_buf,
 		writel(SUNXI_SPI_BURST_CNT(nbytes), &priv->regs->burst_ctl);
 
 	for (i = 0; i < nbytes; ++i) {
-		byte = tx_buf ? *tx_buf++ : 0;
+		byte = *tx_buf++;
 		writeb(byte, &priv->regs->tx_data);
 	}
 }
@@ -393,7 +393,8 @@ static int sunxi_spi_xfer(struct udevice *dev, unsigned int bitlen,
 		}
 
 		len -= nbytes;
-		tx_buf += nbytes;
+		if (tx_buf)
+			tx_buf += nbytes;
 	}
 
 	if (flags & SPI_XFER_END)

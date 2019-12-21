@@ -57,6 +57,7 @@
 		i2c1 = &i2c1;
 		i2c2 = &i2c2;
 		i2c5 = &r_i2c;
+        ethernet0 = &emac;
 	};
 
 	chosen {
@@ -95,4 +96,15 @@
 	pinctrl-names = "default";
 	pinctrl-0 = <&uart0_pins_a>;
 	status = "okay";
+};
+
+&emac {
+    pinctrl-names = "default";
+    pinctrl-0 = <&emac_rgmii_pins>;
+    phy-mode = "rgmii";
+    phy = <&phy1>;
+    status = "okay";
+    phy1: ethernet-phy@7 {
+		reg = <7>;
+    };
 };

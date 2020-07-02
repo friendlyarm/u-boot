@@ -29,6 +29,7 @@
 #define BOARD_TYPE_NANOPI_NEO_S           (10)
 #define BOARD_TYPE_ZEROPI                 (11)
 #define BOARD_TYPE_NANOPI_R1S_H3          (12)
+#define BOARD_TYPE_NANOPI_NEO_PLUS2_H3    (13)
 
 
 #define BOARD_TYPE_H5_VARIANT0            (0) // = NEO-CORE2
@@ -46,7 +47,7 @@
 #define BOARD_TYPE_NANOPI_R1S_H5          (7)
 
 #if defined(CONFIG_MACH_SUN8I_H3_NANOPI)
-#define BOARD_TYPE_MAX                    (BOARD_TYPE_NANOPI_R1S_H3+1)
+#define BOARD_TYPE_MAX                    (BOARD_TYPE_NANOPI_NEO_PLUS2_H3+1)
 #elif defined(CONFIG_MACH_SUN50I_H5_NANOPI)
 #define BOARD_TYPE_MAX                    (BOARD_TYPE_NANOPI_R1S_H5+1)
 #endif

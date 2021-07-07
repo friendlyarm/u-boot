@@ -132,6 +132,12 @@ config STM32_QSPI
 	  used to access the SPI NOR flash chips on platforms embedding
 	  this ST IP core.
 
+config SUNXI_SPI
+	bool "Allwinner SoCs SPI controller"
+	select DM_GPIO
+	help
+	  SPI driver for Allwinner sun4i, sun5i, sun6i, sun7i and sun8i SoCs
+
 config TEGRA114_SPI
 	bool "nVidia Tegra114 SPI driver"
 	help
